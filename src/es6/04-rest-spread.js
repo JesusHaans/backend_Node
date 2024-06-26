@@ -25,3 +25,32 @@ let person = {
 let {name, age, country} = person;
 
 console.log(name, age, person.country); // david 25 UK
+
+
+
+//spread operator
+
+let person1 = {
+    name: 'david',
+    age: 25,
+};
+
+let country1 = 'USA';
+
+let data = {
+    id: 1,
+    ...person1,
+    country1
+};
+
+console.log(data); // {name: 'david', age: 25, country1: 'USA'}
+
+// rest
+
+function sum (num, ...values) {
+    console.log(values); // [2, 3, 4]
+    console.log(num + values[0]); // 3
+    return num + values[0];
+}
+
+sum(1, 2, 3, 4); // 3
